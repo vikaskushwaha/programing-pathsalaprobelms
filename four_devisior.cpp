@@ -16,15 +16,15 @@ int main(){
             int count = 0;
             int tempsum=0;
             int val=sqrt(arr[i]);
-            if(val*val != arr[i]){
-                for(int j =1;j<=sqrt(arr[i]);j++){  
+            if(val*val != arr[i]){ // because only non perfect squre will have even divisors
+                for(int j =1;j<=sqrt(arr[i]);j++){  // this is for finding out divisors
                     if(arr[i]%j == 0){
-                        count++;
-                        tempsum += j +(arr[i]/j);
+                        count++; // counting the divisor because we are using sqrt() we wll get only left side of numbers
+                        tempsum += j +(arr[i]/j); // arr[i]/j is used to find out right side of numbers
                     }
                 }
-                if(count == 2){ 
-                   sum+=tempsum;
+                if(count == 2){  // i use this because for having four divisors count should be equal to 2 which is 
+                   sum+=tempsum; // to adding sum of each element of array
                 }
                 
             }
